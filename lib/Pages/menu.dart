@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wataburger/Pages/Login.dart';
+import 'FoodMenu.dart';
 import 'ProductsScreen.dart';
 
 class Menu extends StatefulWidget {
@@ -48,16 +49,21 @@ class _MenuState extends State<Menu> {
                       Icons.delivery_dining,
                       'Take out',
                           () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => ProductsScreen()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => ProductsScreen()),
+                        // );
                       },
                     ),
                     _buildMenuIcon(
                       Icons.hotel,
                       'Book a Table',
-                          () {},
+                          () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FoodMenu()),
+                        );
+                      },
                     ),
                     _buildMenuIcon(
                       Icons.support_agent,
