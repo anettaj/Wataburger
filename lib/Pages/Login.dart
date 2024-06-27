@@ -93,6 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         if (user != null) {
                           SharedPreferences prefs = await SharedPreferences.getInstance();
                           prefs.setBool('isLoggedIn', true);
+                          prefs.setString('userName', user.displayName ?? '');
+                          prefs.setString('userId', user.uid);
 
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(builder: (context) => Menu()),
@@ -120,6 +122,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                Text('Dont forget the password is: Admin1'),
+                Text('Dont forget the email is: anuanet85@gmail.com'),
                 SizedBox(
                   height: 40,
                 ),
